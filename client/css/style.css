@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+body,
+input,
+p,
+.button,
+a,
+li,
+select {
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  position: relative;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* margin: 20px auto; */
+  /* width: 500px; */
+  /* height: 600px; */
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  /* border: solid #b4b1b1 1px;
+  border-radius: 3%; */
+}
+
+/* .form-container {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: 0;
+} */
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  margin-top: 20px;
+  font-size: 2.2rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+.input {
+  max-width: 380px;
+  width: 100%;
+  height: 50px;
+  background-color: #f0f0f0;
+  margin: 10px 0;
+  border-radius: 55px;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  padding: 0 0.4rem;
+  position: relative;
+}
+
+.input input {
+  padding-right: 40px;
+}
+.input i {
+  text-align: center;
+  line-height: 55px;
+  color: #acacac;
+  font-size: 1.3rem;
+}
+
+#togglePassword {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  cursor: pointer;
+}
+
+#username,
+#password,
+#email,
+#full-name,
+#confirm-pass {
+  background: none;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-weight: 530;
+  color: #333131;
+}
+
+.btn {
+  width: 150px;
+  padding: 15px;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  background-color: #20db;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  margin: 10px;
+  transition: all 0.5s;
+}
+.btn:hover {
+  background-color: rgba(86, 59, 240, 0.733);
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+}
+.social-icon {
+  height: 46px;
+  width: 46px;
+  border: 1px solid;
+  margin: 0 0.45rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: rgb(61, 58, 58);
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+
+.social-icon:hover {
+  color: rgba(86, 59, 240, 0.733);
+  border-color: rgba(86, 59, 240, 0.733);
+}
+
+/* .signin-signup{
+  position: absolute;
+  top:50%;
+  left:75%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: 1fr;
+} */
+
+p {
+  margin-top: 10px;
+  padding: 10px;
+}
+#home-page {
+  background-color: #13131a;
+  /* border-bottom: solid rgba(255, 255, 255, 3); */
+  transition: 0.2s linear;
+  text-transform: capitalize;
+  font-size: 62.5%;
+  overflow: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 7%;
+  border-bottom: 0.01rem solid #7f93d3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+.header .logo img {
+  width: 20vh;
+  height: 5vh;
+  /* object-fit: cover; */
+  background-color: #13131a;
+}
+
+.header .navbar a{
+  text-decoration: none;
+  margin: 0 1rem;
+  font-size: 1.8rem;
+  color: #fff;
+}
+.header .navbar a:hover {
+  color: #93a7e7;
+  border-bottom: .1rem solid #93a7e7;
+  padding-bottom: .5rem;
+}
+
+ .header .icons div{
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.4rem;
+  margin-left: 2rem;
+}
+.icons div:hover {
+  color: #93a7e7;
+} 
+/* .header.search-form{
+  position: absolute;
+  top:110%; right:7%;
+  background: #fff;
+  width: 20vh;
+  height: 2vh;
+  display: flex;
+  align-items: center;
+}
+ .header .search-form input {
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+  color: #13131a;
+  padding: 1rem;
+  text-transform: none;
+}
+.header .search-form label{
+  cursor: pointer;
+  font-size: ;
+  margin-right: ;
+  
+}  */

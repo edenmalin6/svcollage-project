@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/client/css/style.css" />
+    <title>Signin Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <!-- <div class="signin"> -->
+          <form  onsubmit="signin(event)" class="signin-form">
+            <h2>Sign In</h2>
+            <p>Or Sign In With Your Google Account</p>
+              <a href="#" class="social-icon">
+                <i class="fa fa-google-plus"></i>
+              </a>
+            <div class="input">
+              <i class="fas fa-envelope"></i>
+              <input type="text" name="email" id="email" placeholder="Email" required/>
+            </div>
+            <div class="input">
+              <i class="fas fa-lock"></i>
+              <i class="bi bi-eye-slash" id="togglePassword"></i>
+              <input type="text" name="password" id="password" placeholder="Password" required/>
+            </div>
+            <input type="submit" class="btn" value="LOGIN" />
+              <p> Don't Have An Account Yet? <a href="/register.html">Sign Up Here</a></p>
+              
+            </form>
+        </div>
+      </div>
+    </div>
+    <script src="/client/js/storageService.js"></script>
+    <script src="/client/js/app.js"></script>
+    <script></script>
+  </body>
+</html>
