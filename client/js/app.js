@@ -22,6 +22,8 @@ function signin(event) {
     email,
     password,
   };
+  // put here fetch to the post req 
+
   // console.log(signedInUser);
 
   //localStorage.setItem("signedInUser", JSON.stringify(signedInUser))
