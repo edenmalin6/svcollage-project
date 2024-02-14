@@ -1,7 +1,7 @@
-const { MongoClient, ObjectId } = require("mongodb")
+const { MongoClient, ObjectId, Collection } = require("mongodb")
 
-const url = "mongodb+srv://edenmalin:yeepyeepshish@full-stuck.vty1joo.mongodb.net/"
-const dbName = "todos_db"
+const url = "mongodb://localhost:27017"
+const dbName = "project"
 
 const client = new MongoClient(url)
 
