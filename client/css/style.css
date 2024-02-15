@@ -12,8 +12,12 @@ p,
 .button,
 a,
 li,
-select {
+select,
+span {
   font-family: "Roboto", sans-serif;
+}
+section{
+  padding: 2rem 7%;
 }
 
 .container {
@@ -159,56 +163,63 @@ p {
   scroll-padding-top: 9rem;
   scroll-behavior: smooth;
 }
-.header {
+ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 7%;
-  border-bottom: 0.01rem solid #7f93d3;
+  padding: 3vmin 3vmin;
+  border-bottom: 0.1rem solid #ead9b8;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
 }
-.header .logo img {
-  width: 20vh;
-  height: 5vh;
-  /* object-fit: cover; */
-  background-color: #13131a;
+span {
+  font-size: 5vmin;
+  color: #f1d7a4;
+  cursor: pointer;
+  font-weight:lighter;
+
 }
 
-.header .navbar a{
+ nav a {
   text-decoration: none;
-  margin: 0 1rem;
+  margin: 4vmin;
   font-size: 1.8rem;
   color: #fff;
+  float: none;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%);
 }
-.header .navbar a:hover {
-  color: #93a7e7;
-  border-bottom: .1rem solid #93a7e7;
-  padding-bottom: .5rem;
+ nav a:hover {
+  color: #ead9b8;
+  border-bottom: 0.1rem solid #ead9b8;
 }
 
- .header .icons div{
+header .icons div {
   color: #fff;
   cursor: pointer;
   font-size: 1.4rem;
   margin-left: 2rem;
 }
 .icons div:hover {
-  color: #93a7e7;
-} 
-/* .header.search-form{
+  color: #ead9b8;
+}
+ .search-form {
   position: absolute;
-  top:110%; right:7%;
+  top: 115%;
+  right: 7%;
   background: #fff;
-  width: 20vh;
-  height: 2vh;
+  width: 50rem;
+  height: 5rem;
   display: flex;
   align-items: center;
+  transform:scaleY(0);
+  transform-origin: top;
 }
- .header .search-form input {
+.search-form input {
   height: 100%;
   width: 100%;
   font-size: 1.6rem;
@@ -216,9 +227,36 @@ p {
   padding: 1rem;
   text-transform: none;
 }
-.header .search-form label{
+ .search-form label {
   cursor: pointer;
-  font-size: ;
-  margin-right: ;
-  
-}  */
+  font-size: 2.2rem;
+  margin-right: 1.5rem;
+  color: #ead9b8;
+}
+ .search-form label:hover {
+  color: #ead9b8;
+}
+
+.home{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background:url(/images/background.jpg) ; 
+  /* no-repeat */
+  /* background-size:cover;
+  background-position: center; */
+}
+.content{
+  max-width: 60rem;
+  color: #fff;
+}
+h3{
+ font-size: 6rem; 
+}
+.content p{
+  font-size: 1.8rem;
+  font-weight:  bold lighter;
+  line-height: 1.8;
+  /* padding: 1rem 0; */
+  color: #ead9b8;
+}
