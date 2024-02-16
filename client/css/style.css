@@ -16,7 +16,7 @@ select,
 span {
   font-family: "Roboto", sans-serif;
 }
-section{
+section {
   padding: 2rem 7%;
 }
 
@@ -153,17 +153,23 @@ p {
   margin-top: 10px;
   padding: 10px;
 }
-#home-page {
+#home-page, #products-page {
+  animation: fade 1s;
   background-color: #13131a;
-  /* border-bottom: solid rgba(255, 255, 255, 3); */
   transition: 0.2s linear;
   text-transform: capitalize;
   font-size: 62.5%;
   overflow: hidden;
-  scroll-padding-top: 9rem;
-  scroll-behavior: smooth;
 }
- header {
+@keyframes fade{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -175,25 +181,26 @@ p {
   right: 0;
   z-index: 1000;
 }
-span {
+#logo {
   font-size: 5vmin;
-  color: #f1d7a4;
+  background: linear-gradient(to right, #524834, #e6ce9e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   cursor: pointer;
-  font-weight:lighter;
-
+  font-weight: bold;
 }
 
- nav a {
+nav a {
   text-decoration: none;
   margin: 4vmin;
   font-size: 1.8rem;
   color: #fff;
   float: none;
   top: 50%;
-  left: 50%; 
+  left: 50%;
   transform: translate(-50%, -50%);
 }
- nav a:hover {
+nav a:hover {
   color: #ead9b8;
   border-bottom: 0.1rem solid #ead9b8;
 }
@@ -207,7 +214,7 @@ header .icons div {
 .icons div:hover {
   color: #ead9b8;
 }
- .search-form {
+.search-form {
   position: absolute;
   top: 115%;
   right: 7%;
@@ -216,7 +223,7 @@ header .icons div {
   height: 5rem;
   display: flex;
   align-items: center;
-  transform:scaleY(0);
+  transform: scaleY(0);
   transform-origin: top;
 }
 .search-form input {
@@ -227,36 +234,69 @@ header .icons div {
   padding: 1rem;
   text-transform: none;
 }
- .search-form label {
+.search-form label {
   cursor: pointer;
   font-size: 2.2rem;
   margin-right: 1.5rem;
   color: #ead9b8;
 }
- .search-form label:hover {
+.search-form label:hover {
   color: #ead9b8;
 }
 
-.home{
+.home {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background:url(/images/background.jpg) ; 
+  background: url(/images/background.jpg);
   /* no-repeat */
   /* background-size:cover;
   background-position: center; */
 }
-.content{
+.content {
   max-width: 60rem;
   color: #fff;
 }
-h3{
- font-size: 6rem; 
+h3 {
+  font-size: 6rem;
 }
-.content p{
+.content p {
   font-size: 1.8rem;
-  font-weight:  bold lighter;
+  font-weight: bold lighter;
   line-height: 1.8;
   /* padding: 1rem 0; */
-  color: #ead9b8;
+  color: #e2cfaa;
+}
+#get-coffee-btn{
+  width: 170px;
+  padding: 15px;
+  border: none;
+  border-radius: 30px;
+  background-color: #bb9f68;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.8vh;
+  font-weight: bold;
+  margin: 10px;
+  transition: all 0.5s;
+}
+#get-coffee-btn:hover{
+  background-color: #574624;
+}
+#products-page{
+  animation: fade 1s;
+  background-color: #13131a;
+  transition: 0.2s linear;
+  text-transform: capitalize;
+  font-size: 62.5%;
+  overflow: hidden;
+ 
+}
+@keyframes fade{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
 }

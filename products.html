@@ -7,7 +7,31 @@
   <link rel="stylesheet" href="/client/css/style.css" />
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
-  
+<body id="products-page">
+  <header>
+        <span id="logo">SV-SHOP</span>
+        <nav>
+            <a href="./home.html">Home</a>
+            <a href="#">Menu</a>
+            <a href="#">Support</a>
+            <a href="#">Contact</a>
+          </nav>
+      <div class="icons">
+      <div class="fas fa-search" id="search-btn"></div> 
+      <div class="fas fa-shopping-cart" id="cart-btn"></div>
+      </div>
+      <div class="search-form">
+      <input type="search" id="search-box" name="search-box" placeholder="Search Here">
+      <label for="search-box" class="fas fa-search"></label>
+      </div>
+      <!-- <div class="cart-items-container">
+      <div class="cart-item">
+        <span class="fas-fa-times"></span> -->
+      </div>
+      </div>
+      </header>
+      
+  <script src="/client/js/storageService.js"></script>
+  <script src="/client/js/app.js"></script>
 </body>
 </html>

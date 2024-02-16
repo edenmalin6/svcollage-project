@@ -9,16 +9,13 @@
 </head>
 <body onload="init()" id="home-page">
   <header> 
-    <!-- <a href="#" class="logo">
-      <img src="images/svshop.png" alt="">
-    </a> -->
-    <span>SV-SHOP</span>
+    <span id="logo">SV-SHOP</span>
         <nav>
             <a href="#">Home</a>
             <a href="/products.html">Menu</a>
             <a href="#">Support</a>
             <a href="#">Contact</a>
-    </nav>
+          </nav>
     <div class="icons">
      <div class="fas fa-search" id="search-btn"></div> 
      <div class="fas fa-shopping-cart" id="cart-btn"></div>
@@ -40,13 +37,11 @@
     <div class="content">
       <h3>FRESH COFFEE IN THE MORNING</h3>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit consectetur illo incidunt aliquam! Possimus doloremque veniam excepturi nobis quo expedita nisi nam asperiores pariatur, necessitatibus cum vel tempore voluptate a!</p>
-      <a href="/products.html" class="get-coffee-btn">Get yours now</a>
-
+     <button onclick = "window.location.href='/products.html'"
+     id="get-coffee-btn">Get yours now</button></a>
     </div>
-
-
-
   </section>
+  
 
 
   <script src="/client/js/storageService.js"></script>
