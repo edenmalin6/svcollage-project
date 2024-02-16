@@ -153,7 +153,8 @@ p {
   margin-top: 10px;
   padding: 10px;
 }
-#home-page, #products-page {
+#home-page,
+#products-page, #buy-page {
   animation: fade 1s;
   background-color: #13131a;
   transition: 0.2s linear;
@@ -161,11 +162,11 @@ p {
   font-size: 62.5%;
   overflow: hidden;
 }
-@keyframes fade{
-  0%{
+@keyframes fade {
+  0% {
     opacity: 0;
   }
-  100%{
+  100% {
     opacity: 1;
   }
 }
@@ -267,7 +268,7 @@ h3 {
   /* padding: 1rem 0; */
   color: #e2cfaa;
 }
-#get-coffee-btn{
+#get-coffee-btn, .add-to-cart-btn {
   width: 170px;
   padding: 15px;
   border: none;
@@ -280,23 +281,42 @@ h3 {
   margin: 10px;
   transition: all 0.5s;
 }
-#get-coffee-btn:hover{
+#get-coffee-btn:hover,  .add-to-cart-btn:hover {
   background-color: #574624;
 }
-#products-page{
+#products-page {
   animation: fade 1s;
   background-color: #13131a;
   transition: 0.2s linear;
   text-transform: capitalize;
   font-size: 62.5%;
   overflow: hidden;
- 
 }
-@keyframes fade{
-  0%{
+@keyframes fade {
+  0% {
     opacity: 0;
   }
-  100%{
+  100% {
     opacity: 1;
   }
+}
+.menu img {
+  width: 30%;
+}
+.menu-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1rem;
+  margin: 150px;
+}
+ .products {
+  text-align: center;
+  border: 0.1rem solid #ead9b8;
+}
+.products:hover{
+  background:#3b362a;
+}
+.products h2, .price{
+  color:#fff;
+  font-size: 1.2rem;
 }
