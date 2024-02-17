@@ -12,7 +12,7 @@ app.post("/api/signIn", async (req, res) => {
   if (savedUser === null) { // אם אין המייל שהוכנס באינפוט לא שמור בדטהבייס אז הפיינד וואן יחזיר נאל. זאת בדיקה למייל
     return res.status(404).send("User not found");
   }
-1
+
   if(savedUser.password !== password){
     return res.status(400).send("Password is incorrect");
   }
