@@ -20,11 +20,22 @@ app.post("/api/signIn", async (req, res) => {
 
 });
 
-app.post("/api/submit", async (req, res) => {});
+app.post("/api/signUp", async (req, res) => {
+  const { fullName, username, email, password } = req.body
+  const newUser = aw
+
+
+  
+});
 
 app.get("/cart/:userid");
 
-app.put("/cart/:userid");
+app.post("/api/cart/:userid", async(req, res)=>{
+// תשלח 
+// inputs :
+//  לאיזה משתמש להוסיף את הפריט - לפי איידי
+// איזה סוג פריט להוסיף וכמה להוסיף לעגלה , לפי איידי
+});
 
 const PORT = 8000;
 app.listen(PORT, () => {

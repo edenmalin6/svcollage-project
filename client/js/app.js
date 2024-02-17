@@ -1,5 +1,3 @@
-const api = require("./api.js")
-
 const togglePassword = document.getElementById("togglePassword");
 const password = document.getElementById("password");
 
@@ -12,7 +10,7 @@ togglePassword.onclick = function () {
   }
 };
 
-function signin(event) {
+async function signin(event) {
   event.preventDefault();
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
@@ -22,14 +20,22 @@ function signin(event) {
     email,
     password,
   };
-  // put here fetch to the post req 
   const response = await fetch("/api/signIn", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-    body: JSON.stringify(signedInUser),
-  }
-  })
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      body: JSON.stringify(signedInUser),
+    },
+  });
+  if (response.status === 404)
+    return alert(
+      "User not found. Please make sure you already have an account."
+    );
+  else if (response.status === 400)
+    return alert(
+      "Password is incorrect. Please make you you entered the right password."
+    );
+  else if (response.status !== 200) throw Error(await response.text());
 
   // console.log(signedInUser);
 
@@ -39,11 +45,11 @@ function signin(event) {
   window.location.href = "/home.html";
 }
 
-function signout() {
+async function signout() {
   storageService.clearAll();
 }
 
-function signup(event) {
+async function signup(event) {
   event.preventDefault();
   const fullName = document.getElementById("full-name").value;
   const username = document.getElementById("username").value;
@@ -56,9 +62,19 @@ function signup(event) {
     username,
     email,
     password,
-    confirmPassword,
   };
-  api.signUp(newUser)
+  if (password !== confirmPassword)
+    return alert("Passwords are not matching. Please make sure they do.");
+
+  const response = await fetch("/api/signUp", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      body: JSON.stringify(newUser),
+    },
+  });
+  if (response.status !== 200) throw Error(await response.text());
+
   window.location.href = "/signIn.html";
 }
 
@@ -69,3 +85,6 @@ function init() {
     window.location.href = "signIn.html";
   }
 }
+
+addToCart();
+buyNow();
