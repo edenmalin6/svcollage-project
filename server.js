@@ -7,15 +7,18 @@ app.use("/", express.static("client"));
 app.use(express.json());
 
 app.post("/api/signIn", async (req, res) => {
-  const { email, password } = req.body; // מה שהלקוח מכניס באינפוט
-  const savedUser = await userModule.getUserByEmail(email); // היוזר ששמור בדטבייס
-  if (savedUser === null) {
-    // אם אין המייל שהוכנס באינפוט לא שמור בדטהבייס אז הפיינד וואן יחזיר נאל. זאת בדיקה למייל
-    return res.status(404).send("User not found");
-  }
+  try {
+    const { email, password } = req.body; // מה שהלקוח מכניס באינפוט
+    const savedUser = await userModule.getUserByEmail(email); // היוזר ששמור בדטבייס
+    if (savedUser === null)
+      return res.status(404).send("User does not exist. ");
 
-  if (savedUser.password !== password) {
-    return res.status(400).send("Password is incorrect");
+    // אם אין המייל שהוכנס באינפוט לא שמור בדטהבייס אז הפיינד וואן יחזיר נאל. זאת בדיקה למייל
+
+    if (savedUser.password !== password)
+      return res.status(400).send("Invalid password.");
+  } catch (error) {
+    res.status(500).send("Internal Server Error");
   }
   return res.send(savedUser._id);
 });
@@ -27,7 +30,17 @@ app.post("/api/signUp", async (req, res) => {
 
 app.get("/cart/:userid");
 
-app.post("/api/cart/:userid", async (req, res) => {
+app.patch("/api/cart/:userid", async (req, res) => {
+  try {
+    const { productId, action } = req.body
+    if (action === "add") // update the cart by productId
+  } catch (error) {
+    res.status(500).send("Internal Server Error");
+  }
+  // get the user id
+  // kind of action - delete, add
+  // productId
+  //
   // תשלח
   // inputs :
   //  לאיזה משתמש להוסיף את הפריט - לפי איידי
