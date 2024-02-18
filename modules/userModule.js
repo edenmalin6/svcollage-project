@@ -16,4 +16,9 @@ async function createUser(fullName, email, password) {
   return await collection.insertOne({ fullName, email, password, cart:[] });
 }
 
+async function updateCartById(id, updatedCart){
+  const collection = await getCollection(collectionName);
+  await collection.updateOne({_id: toObjectId(id)}, {$set: {cart: updatedCart}})
+}
+
 module.exports = { getUserByEmail, createUser };

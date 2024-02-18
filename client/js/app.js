@@ -88,3 +88,7 @@ function init() {
 
 addToCart();
 buyNow();
+
+
+// { email, password } = req.body
+// req.body.email , req.body.password
