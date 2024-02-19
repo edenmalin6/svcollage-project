@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body id="products-page">
+    <header>
+      <span id="logo">SV-SHOP</span>
+      <nav>
+        <a href="./home.html">Home</a>
+        <a href="#">Menu</a>
+        <a href="#">Support</a>
+        <a href="#">Contact</a>
+      </nav>
+      <div class="icons">
+        <div class="fas fa-search" id="search-btn"></div>
+        <a href="./buy.html">
+          <div class="fas fa-shopping-cart" id="cart-btn"></div
+        ></a>
+      </div>
+      <div class="search-form">
+        <input
+          type="search"
+          id="search-box"
+          name="search-box"
+          placeholder="Search Here"
+        />
+        <label for="search-box" class="fas fa-search"></label>
+      </div>
+      <!-- <div class="cart-items-container">
+      <div class="cart-item">
+        <span class="fas-fa-times"></span> -->
+      <!-- </div>
+      </div> -->
+    </header>
+    <section class="menu" id="menu">
+      <div class="menu-container">
+        <div class="products">
+          <img src="images/espresso-blend.png" alt="" />
+          <h2>Espresso Blend</h2>
+          <div class="price">15.99$</div>
+          <button class="add-to-cart-btn">
+            Add To Cart
+          </button>
+        </div>
+
+        <div class="products">
+          <img src="images/caramel.png" alt="" />
+          <h2>Caramel Blend</h2>
+          <div class="price">17.99$</div>
+          <button class="add-to-cart-btn">Add To Cart</button>
+        </div>
+
+        <div class="products">
+          <img src="images/vanilla-blend.png" alt="" />
+          <h2>Vanilla Blend</h2>
+          <div class="price">17.99$</div>
+          <button class="add-to-cart-btn">Add To Cart</button>
+        </div>
+
+        <div class="products">
+          <img src="images/decaf-blend.png" alt="" />
+          <h2>Decaf Blend</h2>
+          <div class="price">9.99$</div>
+          <button class="add-to-cart-btn"g>Add To Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="./js/storageService.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>

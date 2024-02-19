@@ -8,8 +8,18 @@ const storageService = {
     const products = JSON.parse(localStorage.getItem(PROD_KEY))
     return products || []
   },
-  setProducts(todos) {
-    localStorage.setItem(TODO_KEY, JSON.stringify(todos))
+  setProducts(products) {
+    localStorage.setItem(TODO_KEY, JSON.stringify(products))
+  },
+  addOneProduct(newProduct) {
+    const products = this.getProducts()
+    products.push(newProduct)
+    this.setProducts(products)
+  },
+  removeOneProduct(productId) {
+    const products = this.getProducts()
+    const updatedProducts = products.filter((product) => product._id !== productId)
+    this.setProducts(updatedProducts)
   },
   getUser() { 
     const user = JSON.parse(localStorage.getItem(USER_KEY))
@@ -25,24 +35,13 @@ const storageService = {
     localStorage.removeItem(USER_KEY)
     localStorage.removeItem(PROD_KEY)
   },
-  toggleDone(todoId) {
-    const todos = this.getTodos()
-    const updatedTodos = todos.map((todo) => {
-      if (todo._id === todoId) {
-        todo.isDone = !todo.isDone//  ככה לא משנה מה יש באיז דאן נגיד אם הוא פולס אז נקבל
+  toggleDone(productId) {
+    const products = this.getProducts()
+    const updatedProducts = products.map((product) => {
+      if (product._id === productId) {
+        product.wasAdded = !product.wasAdded//  ככה לא משנה מה יש באיז דאן נגיד אם הוא פולס אז נקבל
       }
-      return todo
+      return product
     })
     this.setTodos(updatedTodos)
-  },
-  addOneProduct(newTodo) {
-    const todos = this.getTodos()// מצביע על האובייקט שעליו נמצאת המתודה .מצביע על הטודו כי הוא אובייקט
-    todos.push(newTodo)
-    this.setTodos(todos)
-  },
-  removeOneProduct(todoId) {
-    const todos = this.getTodos()
-    const updatedTodos = todos.filter((todo) => todo._id !== todoId)
-    this.setTodos(updatedTodos)
-  },
-}
+  },}

@@ -97,7 +97,7 @@ p {
   color: #333131;
 }
 
-.btn {
+.btn, .add-to-cart-btn {
   width: 180px;  
   padding: 15px;
   border: none;
@@ -110,7 +110,7 @@ p {
   margin: 10px;
   transition: all 0.5s;
 }
-.btn:hover {
+ .add-to-cart-btn:hover {
   background-color: #574624;
 }
 
