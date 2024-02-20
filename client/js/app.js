@@ -1,14 +1,18 @@
-const togglePassword = document.getElementById("togglePassword");
+const togglePassword = document.querySelector(".togglePassword");
 const password = document.getElementById("password");
+const confirmPassword = document.getElementById("confirm-pass");
 
 togglePassword.onclick = function () {
   if (password.type == "password") {
     password.type = "text";
-    this.classList.toggle("bi-eye");
-  } else {
+    this.classList.add("bi-eye");
+  }
+   else {
     password.type = "password";
+    this.classList.remove("bi-eye")
   }
 };
+
 
 async function signIn(event) {
   event.preventDefault();
@@ -26,6 +30,7 @@ async function signIn(event) {
     },
     body: JSON.stringify(signedInUser),
   });
+  // const data = await response.json() למה לא צריך את זה?
   if (response.status === 404)
     return alert(
       "User not found. Please make sure you already have an account."
@@ -69,6 +74,7 @@ async function signUp(event) {
       body: JSON.stringify(newUser),
     },
   });
+  // const data = await response.json()
   if (response.status !== 200) throw Error(await response.text());
 
   window.location.href = "/signIn.html";
@@ -99,35 +105,37 @@ async function signUp(event) {
 // });
 //    }
 
-
-   document.getElementsByClassName("add-to-cart-btn").addEventListener("click", addToCart) 
-  async function addToCart() {
-  const signedInUser = storageService.getUser()
+const addToCartBtns = document.getElementsByClassName("add-to-cart-btn");
+async function addToCart() {
+  const signedInUser = storageService.getUser();
 
   const updatedCart = {
-    action: add,
+    action: "add",
     productId,
-  }
-  const response = await fetch(`/api/cart/${signedInUser._id}`,{
-    method: "PATCH",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(updatedCart),
-  })
+  };
+  const response = await fetch(
+    `/api/cart/${signedInUser._id}`,
+    {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updatedCart),
+    },
+    updatedCart
+  );
 
-   if (response.status !== 200) throw Error(await response.text());
-  
-   storageService.addOneProduct()
+  if (response.status !== 200) throw Error(await response.text());
 
-
-  }
-
-
-
-async function renderProducts(products){
-  const strHTMLSs = products.map((product)=> {
-    let className = product.
-  })
+  storageService.addOneProduct();
 }
+for (const btn of addToCartBtns) {
+ await addToCartBtns.addEventListener("click", addToCart);
+}
+
+// async function renderProducts(products){
+//   const strHTMLSs = products.map((product)=> {let className = product}
+
+// )
+// }
 // buyNow();
 
 async function removeFromCart(productId) {

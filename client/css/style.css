@@ -76,7 +76,7 @@ p {
   font-size: 1.3rem;
 }
 
-#togglePassword {
+.togglePassword {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -109,6 +109,9 @@ p {
   font-weight: 600;
   margin: 10px;
   transition: all 0.5s;
+}
+.btn:hover{
+  background-color: #574624;
 }
  .add-to-cart-btn:hover {
   background-color: #574624;
