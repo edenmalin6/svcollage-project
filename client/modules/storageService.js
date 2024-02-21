@@ -1,4 +1,3 @@
-"use strict";
 
 const USER_KEY = "signedInUser";
 const PROD_KEY = "products";

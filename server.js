@@ -7,31 +7,31 @@ app.use("/", express.static("client"));
 app.use(express.json());
 
 app.post("/api/signIn", async (req, res) => {
-  // const { email, password } = req.body; // מה שהלקוח מכניס באינפוט
+  const { email, password } = req.body; // מה שהלקוח מכניס באינפוט
 
-  const email = req.body.email;
-  const password = req.body.password;
+  // const email = req.body.email;
+  // const password = req.body.password;
 
   let savedUser;
   try {
     savedUser = await userModule.getUserByEmail(email); // היוזר ששמור בדטבייס
+
+    // אם אין המייל שהוכנס באינפוט לא שמור בדטהבייס אז הפיינד וואן יחזיר נאל. זאת בדיקה למייל
+    if (savedUser === null)
+      return res
+        .status(404)
+        .send("User not found. Please make sure you already have an account.");
+
+    if (savedUser.password !== password)
+      return res
+        .status(400)
+        .send(
+          "Invalid password. Please make you you entered the right password."
+        );
   } catch (error) {
     console.error("Error fetching signInUser", error);
     return res.status(500).send("Internal Server Error");
   }
-  // אם אין המייל שהוכנס באינפוט לא שמור בדטהבייס אז הפיינד וואן יחזיר נאל. זאת בדיקה למייל
-
-  if (savedUser === null)
-    return res
-      .status(404)
-      .send("User not found. Please make sure you already have an account.");
-
-  if (savedUser.password !== password)
-    return res
-      .status(400)
-      .send(
-        "Invalid password. Please make you you entered the right password."
-      );
   return res.send(savedUser._id);
 });
 
@@ -90,7 +90,6 @@ app.get("/api/product", async (req, res) => {
   return res.send(products);
 });
 
-// get /api/product?sort=name&search=es
 app.get("/api/product/:productId", async (req, res) => {
   const { productId } = req.params;
   let product;

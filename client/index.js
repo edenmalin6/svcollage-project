@@ -1,6 +1,6 @@
-import storageService from "./storageService.js";
+import storageService from "./modules/storageService.js";
 
-window.signOut = function () {
+window.signOut = function signOut() {
   storageService.clearAll();
   window.location.href = "signIn.html";
 };

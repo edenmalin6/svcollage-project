@@ -39,8 +39,9 @@ window.signIn = async function(event) {
 
   storageService.setUser(signedInUser);
   window.location.href = "/index.html";
+  
 }
 
 if (storageService.isUserLoggedIn()) {
-  window.location.href = "/index.html";
+  window.location.href = "/index.html"; // אם היזור מנסה לגשת לעמוד התחברות מתוך היו אר אז תשאיר אותו מחובר
 }
