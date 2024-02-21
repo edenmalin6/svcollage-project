@@ -26,6 +26,11 @@ async function removeProductFromCart(userId, productId) {
     { $pull: { cart: productId } }
   );
 }
+async function getCart(userId){
+  const collection = await getCollection(collectionName);
+  const user = await collection.findOne( { _id: toObjectId(userId)})
+  return user.cart
+}
 async function clearCart(userId) {
   const collection = await getCollection(collectionName);
   await collection.updateMany(
@@ -40,4 +45,5 @@ module.exports = {
   addProductToCart,
   removeProductFromCart,
   clearCart,
+  getCart
 };
