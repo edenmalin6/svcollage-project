@@ -10,32 +10,34 @@ body {
   background-color: #13131a;
   font-family: "Roboto", sans-serif;
 }
-
 section {
-  padding: 2rem 7%;
+  padding: 50px 100px;
 }
-
-.container {
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 9rem;
+}
+html::-webkit-scrollbar {
+  width: 0.8rem;
+}
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+.sign-container {
   position: relative;
-  /* display: flex; */
-  /* justify-content: center; */
-  /* margin: 20px auto; */
-  /* width: 500px; */
-  /* height: 600px; */
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
-  /* border: solid #b4b1b1 1px;
-  border-radius: 3%; */
 }
 
- .form-container {
+.form-container {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-}  
+}
 
 form {
   display: flex;
@@ -53,7 +55,8 @@ h2 {
 p {
   color: #fff;
 }
-#signin, #signup {
+#signin,
+#signup {
   color: #bb9f68;
 }
 .input {
@@ -97,8 +100,9 @@ p {
   color: #333131;
 }
 
-.btn, .add-to-cart-btn {
-  width: 180px;  
+.btn,
+.add-to-cart-btn {
+  width: 180px;
   padding: 15px;
   border: none;
   border-radius: 30px;
@@ -110,10 +114,10 @@ p {
   margin: 10px;
   transition: all 0.5s;
 }
-.btn:hover{
+.btn:hover {
   background-color: #574624;
 }
- .add-to-cart-btn:hover {
+.add-to-cart-btn:hover {
   background-color: #574624;
 }
 
@@ -141,15 +145,6 @@ p {
   border-color: #efece8;
 }
 
-/* .signin-signup{
-  position: absolute;
-  top:50%;
-  left:75%;
-  transform: translate(-50%, -50%);
-  display: grid;
-  grid-template-columns: 1fr;
-} */
-
 p {
   margin-top: 10px;
   padding: 10px;
@@ -171,8 +166,8 @@ p {
     opacity: 1;
   }
 }
-header {
-  display: flex;
+
+/* display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 3vmin 3vmin;
@@ -181,7 +176,21 @@ header {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1000; */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right:0;
   z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.1rem solid #ead9b8;
+  padding: 3vmin 3vmin;
+  transition: 0.5s linear;
+  text-decoration: none;
+  /* background-color: #151519; */
 }
 #logo {
   font-size: 5vmin;
@@ -191,16 +200,21 @@ header {
   cursor: pointer;
   font-weight: bold;
 }
-
-nav a {
-  text-decoration: none;
-  margin: 4vmin;
-  font-size: 1.8rem;
-  color: #fff;
-  float: none;
+nav{ 
+  display: flex;
+  margin-right: 15%;
+  gap:3rem;
+  align-items: center;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+}
+nav a {
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #fff;
+   float: none;
+ 
 }
 nav a:hover {
   color: #ead9b8;
@@ -247,22 +261,19 @@ header .icons div {
 }
 
 .home {
-  min-height: 60rem;
-  /* max-height: 60rem; */
-  /* max-width: 100%; */
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  background: url(/images/background.jpg) ;
-  /* no-repeat */
-   /* background-size:calc(); */
-  /* background-position: center;  */
+  background: url(/images/backgroundImg.jpg);
 }
 .content {
+  margin-top: 20px;
   max-width: 60rem;
   color: #fff;
 }
 h3 {
-  font-size: 6rem;
+  font-size: 5rem;
 }
 .content p {
   font-size: 1.8rem;

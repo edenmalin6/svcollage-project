@@ -1,5 +1,5 @@
 import storageService from "./modules/storageService.js";
-
+import api from "./modules/api.js";
 // const togglePassword = document.querySelector(".togglePassword");
 // const password = document.getElementById("password");
 // const confirmPassword = document.getElementById("confirm-pass");
@@ -13,8 +13,7 @@ import storageService from "./modules/storageService.js";
 //   }
 // };
 
-
-window.signIn = async function(event) {
+window.signIn = async function (event) {
   event.preventDefault();
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
@@ -23,24 +22,16 @@ window.signIn = async function(event) {
     email,
     password,
   };
-  const response = await fetch("/api/signIn", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(signedInUser),
-  });
-
-  if (response.status !== 200) {
-    const text = await response.text();
-    alert(text);
-    throw Error(text);
+  try {
+    signedInUser._id = await api.signIn(signedInUser);
+  } catch (e) {
+    alert(e);
+    throw e;
   }
 
   storageService.setUser(signedInUser);
   window.location.href = "/index.html";
-  
-}
+};
 
 if (storageService.isUserLoggedIn()) {
   window.location.href = "/index.html"; // אם היזור מנסה לגשת לעמוד התחברות מתוך היו אר אז תשאיר אותו מחובר

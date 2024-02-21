@@ -32,7 +32,7 @@ app.post("/api/signIn", async (req, res) => {
     console.error("Error fetching signInUser", error);
     return res.status(500).send("Internal Server Error");
   }
-  return res.send(savedUser._id);
+  return res.send(savedUser._id.toString());
 });
 
 app.post("/api/signUp", async (req, res) => {
@@ -42,11 +42,11 @@ app.post("/api/signUp", async (req, res) => {
   // const password = req.body.password;
   try {
     await userModule.createUser(fullName, email, password);
-    return res.send();
   } catch (error) {
     console.error("Error fetching newUser", error);
     return res.status(500).send("Internal Server Error");
   }
+  return res.send();
 });
 
 app.patch("/api/cart/:userId", async (req, res) => {
