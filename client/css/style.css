@@ -299,6 +299,9 @@ h3 {
     opacity: 1;
   }
 }
+.sort-products label{
+  color: #fff;
+}
 .menu img {
   width: 30%;
 }

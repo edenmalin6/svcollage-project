@@ -4,8 +4,8 @@ import api from "./modules/api.js";
 const userId = storageService.getUser()._id;
 const menuContainer = document.getElementById("menu-container");
 
-// const cartt =  await api.getUserCart(userId);
-// cartt.map(api.getProduct)
+// const cart =  await api.getUserCart(userId);
+// cart.map(api.getProduct)
 
 async function renderProducts() {
   const cart = await api.getUserCart(userId);
