@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const userModule = require("./modules/userModule.js");
 const productModule = require("./modules/productModule.js");
+const orderModule = require("./modules/orderModule.js");
 
 app.use("/", express.static("client"));
 app.use(express.json());
@@ -100,6 +101,33 @@ app.get("/api/product/:productId", async (req, res) => {
     return res.status(500).send("Internal Server Error");
   }
   return res.send(product);
+});
+app.post("/api/order/:userId", async (req, res) => {
+  try {
+    await orderModule.addOrder(req.params.userId);
+  } catch (error) {
+    console.error("Error making order", error);
+    return res.status(500).send("Internal Server Error");
+  }
+  return res.send();
+});
+
+app.use("/api/order", (req, res, next) => {
+  console.log("Request Type:", req.method);
+  if (req.query.admin !== "true") {
+    return res.status(400).send("Only admins allowed here");
+  }
+  return next();
+});
+app.get("/api/order", async (req, res) => {
+  let orders;
+  try {
+    orders = await orderModule.getOrders();
+  } catch (error) {
+    console.error("Error getting orders", error);
+    return res.status(500).send("Internal Server Error");
+  }
+  return res.send(orders);
 });
 
 const PORT = 8000;

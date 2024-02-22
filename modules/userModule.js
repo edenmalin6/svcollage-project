@@ -33,9 +33,9 @@ async function getCart(userId) {
 }
 async function clearCart(userId) {
   const collection = await getCollection(collectionName);
-  await collection.updateMany(
+  await collection.updateOne(
     { _id: toObjectId(userId) },
-    { $push: { cart: { $each: [] }, $slice: 0 } }
+    { $set: { cart: [] } }
   );
 }
 

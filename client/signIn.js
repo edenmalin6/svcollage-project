@@ -1,5 +1,6 @@
 import storageService from "./modules/storageService.js";
 import api from "./modules/api.js";
+
 // const togglePassword = document.querySelector(".togglePassword");
 // const password = document.getElementById("password");
 // const confirmPassword = document.getElementById("confirm-pass");

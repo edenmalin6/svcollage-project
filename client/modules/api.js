@@ -57,6 +57,19 @@ export default {
     }
     return await response.json();
   },
+  async makeOrder(userId) {
+    const response = await fetch(`/api/order/${userId}`, { method: "POST" });
+    if (response.status !== 200) {
+      throw Error(await response.text());
+    }
+  },
+  async getAllOrders(queryParams) {
+    const response = await fetch("/api/order?" + queryParams);
+    if (response.status !== 200) {
+      throw Error(await response.text());
+    }
+    return await response.json();
+  },
 
   async signUp(newUser) {
     const response = await fetch("/api/signUp", {
