@@ -311,6 +311,14 @@ h3 {
   gap: 1rem;
   margin: 150px;
 }
+#add-btn-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sort-products{
+
+}
 .products {
   text-align: center;
   border: 0.1rem solid #ead9b8;
